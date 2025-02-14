@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+      <link rel="icon" href="{{url_for('static', filename='icons/icon_144x144.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon_192x192.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon_512x512.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_144x144.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_192x192.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_512x512.png')}}" type="image/png">
+  <link rel="manifest" href="/manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register("/sw.js").then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+    <title>Kptn to Mealie</title>
+</head>
+<body>
+
+<div class="toggle-container">
+  <div class="toggle" id="toggle"></div>
+</div>
+
+    <div class="container">
+        <h1>Kptn to Mealie</h1>
+        <form action="/execute" method="post">
+            <input type="text" name="textfield" placeholder="Enter a command parameter">
+            <button type="submit">Add recipe to Mealie</button>
+        </form>
+        {% if result %}
+            <p>{{ result }}</p>
+        {% else %}
+            <p><br></p>
+        {% endif %}
+    </div>
+<script>
+            const toggle = document.getElementById("toggle");
+            // Check and apply the mode preference before the page loads
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                toggle.classList.add("checked");
+            }
+        
+
+        // Toggle between dark and light modes and save preference
+        function toggleMode() {
+            const htmlElement = document.body;
+            htmlElement.classList.toggle('dark-mode');
+            toggle.classList.toggle("checked");
+            const currentMode = htmlElement.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('mode', currentMode);
+        
+        }
+        toggle.addEventListener("click", () => {toggleMode()});
+</script>
+</body>
+</html>
