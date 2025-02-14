@@ -6,6 +6,10 @@ The app is designed as pwa and so it can be installed as web-app on mobile devic
 Many thanks to https://github.com/ephes/kptncook for the backend functionality. <br/>
 Also a big thank you for your fantastic cooking apps @[Mealie](https://mealie.io/) and @[KptnCook](https://www.kptncook.com/). 
 
+## Disclaimer
+This app is work in progress and should not be exposed.
+I only wanted to have a quick solution to add recipes from KptnCook to Mealie.
+
 ## Installation
 Please install the backend first: https://github.com/ephes/kptncook 
 
