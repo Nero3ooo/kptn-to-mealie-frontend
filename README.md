@@ -4,6 +4,8 @@ This is a lightweigth flask frontend to add recipes from KptnCook to Mealie via 
 
 Many thanks to https://github.com/ephes/kptncook for the backend functionality.
 
+Also a big thank you for your fantastic cooking apps @[Mealie](https://mealie.io/) and @[KptnCook](https://www.kptncook.com/). 
+
 ## Installation
 Please install the backend first: https://github.com/ephes/kptncook 
 
