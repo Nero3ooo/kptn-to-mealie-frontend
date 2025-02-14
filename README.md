@@ -7,7 +7,7 @@ Many thanks to https://github.com/ephes/kptncook for the backend functionality. 
 Also a big thank you for your fantastic cooking apps @[Mealie](https://mealie.io/) and @[KptnCook](https://www.kptncook.com/). 
 
 ## Disclaimer
-This app is work in progress and should not be exposed.
+This app is work in progress and should not be exposed. <br/>
 I only wanted to have a quick solution to add recipes from KptnCook to Mealie.
 
 ## Installation
