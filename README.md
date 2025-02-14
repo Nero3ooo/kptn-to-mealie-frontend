@@ -1,6 +1,7 @@
 # Kptn to Mealie Frontend
 
 This is a lightweigth web frontend to add recipes from KptnCook to Mealie via the shared link.
+
 The app is designed as pwa and so it can be installed as web-app on mobile devices via chrome.
 
 Many thanks to https://github.com/ephes/kptncook for the backend functionality.
