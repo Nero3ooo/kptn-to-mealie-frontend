@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, send_file
+import json
+from flask import Flask, render_template, request, send_file, jsonify
 import subprocess
 import requests
 
@@ -21,10 +22,11 @@ def index(path):
 
 @app.route('/execute', methods=['POST'])
 def execute():
-    short_url = request.form['textfield']
+    short_url = json.loads(request.data)
+    short_url = short_url['textfield']
     if(short_url == ''):
         result = 'no url'
-        return render_template('index.html', result=result)
+        return jsonify({'result': result})
     try:
         # Resolve the short URL to get the final URL
         response = requests.get(short_url, allow_redirects=True)
@@ -40,7 +42,7 @@ def execute():
     except subprocess.CalledProcessError as e:
         result = f"An error occurred: {e.output}"
     result = result + last_path_segment
-    return render_template('index.html', result=result)
+    return jsonify({'result': result})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

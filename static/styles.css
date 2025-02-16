@@ -14,6 +14,7 @@ body {
     color: #f4f4f4;
 }
 .container {
+    min-width: 18em;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -28,12 +29,13 @@ body {
 .container h1 {
     margin-bottom: 20px;
 }
-.container form {
+.container .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .container input[type="text"] {
+    text-align: center;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
