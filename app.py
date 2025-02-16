@@ -42,22 +42,6 @@ def execute():
     result = result + last_path_segment
     return render_template('index.html', result=result)
 
-#@app.route('/up')
-#def home():
-#    return render_template('upload.html')
-
-#@app.route('/upload', methods=['POST'])
-#def upload_file():
-#    if 'file' in request.files:
-#        file = request.files['file']
-#        filename = file.filename
-        # Here you should save the file
-#        file.save(os.path.join('static/icons/', filename))
-        # file.save(path_to_save_file)
-#        return 'File uploaded successfully'
-
-#    return 'No file uploaded'
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 
