@@ -34,8 +34,8 @@ def execute():
         last_path_segment = last_path_segment.split('?')[0]
         # Run the terminal command
 
-        result = subprocess.check_output(['/root/.local/pipx/venvs/kptncook/bin/kptncook', 'search-by-id', last_path_segment], universal_newlines=True)
-        result = subprocess.check_output(['/root/.local/pipx/venvs/kptncook/bin/kptncook', 'sync-with-mealie'], universal_newlines=True)
+        result = subprocess.check_output(['kptncook', 'search-by-id', last_path_segment], universal_newlines=True)
+        result = subprocess.check_output(['kptncook', 'sync-with-mealie'], universal_newlines=True)
         result = 'successfully imported '
     except subprocess.CalledProcessError as e:
         result = f"An error occurred: {e.output}"
