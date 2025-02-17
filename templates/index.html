@@ -68,19 +68,26 @@
     let value = document.getElementById("url").value;
     let myBody = {"textfield": document.getElementById("url").value};
 
-    const response = await fetch('/execute', {
+    // rest api call
+    fetch('/execute', {
       method: 'POST',
       body: JSON.stringify(myBody), // string or object
       headers: {
         'Content-Type': 'application/json'
       }
+    }).then ((response) => {
+      // extract json from response
+      return response.json();
+    }).then ((response) => {
+      // show response
+      document.getElementById("result").innerText = response["result"];
+      document.getElementById("url").value = '';
+    }).catch((error) => {
+      document.getElementById("result").innerText = "Server not reachable";
     });
-    const myJson = await response.json(); //extract JSON from the http response
-
-    document.getElementById("result").innerText = myJson["result"];
-    document.getElementById("url").value = '';
   }
 
+  // add events for button and inputfield
   postBtn.addEventListener("click", () => {postUrl()});
   urlInput.addEventListener("keydown",
   function(event) {
