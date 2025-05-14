@@ -95,6 +95,30 @@
         postUrl();
     }
   });
+
+  const url = new URL(document.location);
+  const sharedLink = url.searchParams.get("link");
+  let description = url.searchParams.get("description");
+  try {
+    if(sharedLink !== null){
+      new URL(sharedLink);
+      document.getElementById("url").value = sharedLink;
+    } else if(description !== null){
+      const searchString = "https";
+      const startIndex = description.indexOf(searchString);
+
+      if (startIndex !== -1) {
+        description = description.slice(startIndex);
+        new URL(description);
+        document.getElementById("url").value = description;
+      } else {
+        document.getElementById("result").innerText = "Shared Text does not contain https";
+      }
+    }
+  } catch (_) {
+    document.getElementById("result").innerText = "Invalid URL";
+  }
+
 </script>
 
 </body>

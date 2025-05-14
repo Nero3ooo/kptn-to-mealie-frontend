@@ -14,6 +14,7 @@ def serve_manifest():
 def serve_sw():
     return send_file('sw.js', mimetype='application/javascript')
 
+@app.route('/share-handler', methods=['GET'], defaults={'path': ''})
 @app.route('/', defaults={'path': ''})
 @app.route('/execute', methods=['GET'])
 @app.route('/<path:path>')
