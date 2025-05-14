@@ -28,3 +28,8 @@ Afterwards you can reach the app at port 5000.
 
 <img width="289" alt="image" src="https://github.com/user-attachments/assets/8a0c70aa-7b64-437f-8631-1f86884fcf0e" />
 
+If you install it as PWA on your smartphone, you can use the share handler functionality to transfer a recipe within three clicks:
+
+Click on share recipe in the KptnCook-App and select KptnToMealie. 
+
+The link of the recipe should be passed to the inputfield automaticly and you can transfer it to mealie by clicking the button.
